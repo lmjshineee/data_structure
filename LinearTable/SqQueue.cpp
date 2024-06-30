@@ -22,4 +22,34 @@ bool isEmpty(SqQueue Q){
 bool EnQueue(SqQueue &Q,ElemType x){
     if((Q.rear+1)%MaxSize==Q.front)
         return false;
+    Q.data[Q.rear]=x;
+    Q.rear=(Q.rear+1)%MaxSize;
+    return true;
+}
+
+bool DeQueue(SqQueue &Q,ElemType &x){
+    if(Q.front==Q.rear)
+        return false;
+    x=Q.data[Q.front];
+    Q.front=(Q.front+1)%MaxSize;
+    return true;
+}
+
+int GetLength(SqQueue Q){
+    return (Q.rear-Q.front+MaxSize)%MaxSize;
+}
+
+int main(){
+    SqQueue Q;
+    InitQueue(Q);
+    for(int i=0;i<10;i++)
+        EnQueue(Q,i);
+    ElemType x;
+    DeQueue(Q,x);
+    cout<<"Dequeued element is:"<<x<<endl;
+    cout<<"Length is:"<<GetLength(Q)<<endl;
+    DeQueue(Q,x);
+    EnQueue(Q,10);
+    EnQueue(Q,11);
+    return 0;
 }
