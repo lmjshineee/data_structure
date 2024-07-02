@@ -36,4 +36,13 @@ int main(){
 	fun4(*p);
 	cout<<"*p = "<<*p<<",tmp = "<<tmp<<endl;//*p = 4,tmp = 4
 
+	int i=0;
+	cout<<i++<<endl;
+	cout<<i<<endl;
+	cout<<++i<<endl;
+	cout<<i<<endl;
+
+	char str[] = "Hello,world!";
+	cout<<str[0]<<endl;
+	return 0;
 }
