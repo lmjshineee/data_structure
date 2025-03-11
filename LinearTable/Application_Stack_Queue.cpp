@@ -68,5 +68,13 @@ int main(){
     int i;
     i=F(F(1));
     cout<<i<<endl;
+
+    MinStack s;
+    s.push(1);
+    s.push(2);
+    s.push(3);
+    cout<<s.getMin()<<endl;
+    s.pop();
+    cout<<s.getMin()<<endl;
     return 0;
 }
